@@ -1,0 +1,48 @@
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss" xmlns:media="http://search.yahoo.com/mrss/" xmlns:buzz="http://schemas.google.com/buzz/2010" xmlns:crosspost="http://purl.org/syndication/cross-posting" xmlns:gd="http://schemas.google.com/g/2005" xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:activity="http://activitystrea.ms/spec/1.0/" xmlns:poco="http://portablecontacts.net/ns/1.0" gd:kind="buzz#activity"> 
+  <title>Seated figure</title> 
+  <published>2011-05-20T15:30:02.000Z</published> 
+  <updated>2011-05-20T15:35:30.184Z</updated> 
+  <id>tag:google.com,2010:buzz:z12dgfjgkwabv3egs04ch3kqzqnscp2xvhc</id> 
+  <link href="https://profiles.google.com/101327999921150687436/posts/SUjANDpeWVo" type="text/html" rel="alternate"/> 
+  <link href="https://www.googleapis.com/buzz/v1/activities/101327999921150687436/@self/B:z12dgfjgkwabv3egs04ch3kqzqnscp2xvhc?alt=atom" type="application/atom+xml" rel="self"/> 
+  <link thr:count="0" href="https://www.googleapis.com/buzz/v1/activities/101327999921150687436/@self/B:z12dgfjgkwabv3egs04ch3kqzqnscp2xvhc/@comments?alt=atom" type="application/atom+xml" thr:updated="2011-05-20T15:35:30.184Z" rel="replies"/> 
+  <author> 
+    <poco:id>101327999921150687436</poco:id> 
+    <poco:photoUrl/> 
+    <name>Roy Patrick Tan</name> 
+    <uri>https://profiles.google.com/101327999921150687436</uri> 
+    <link href="" type="image/jpeg" rel="photo"/> 
+    <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type> 
+  </author> 
+  <content type="html">Seated figure</content> 
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb> 
+  <activity:object> 
+    <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type> 
+    <content type="html">Seated figure</content> 
+    <buzz:original-content type="text"/> 
+    <link href="https://profiles.google.com/101327999921150687436/posts/SUjANDpeWVo" type="text/html" rel="alternate"/> 
+    <buzz:attachment> 
+      <activity:object-type>http://activitystrea.ms/schema/1.0/photo</activity:object-type> 
+      <title>Seated figure</title> 
+      <link media:width="1744" href="http://farm4.static.flickr.com/3539/5740322886_f9273216ea_o.jpg" type="image/jpeg" rel="enclosure" media:height="2331"/> 
+      <link href="http://www.flickr.com/photos/8962549@N02/5740322886" type="text/html" rel="alternate"/> 
+      <link href="http://images0-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&amp;gadget=a&amp;resize_h=100&amp;url=http%3A%2F%2Ffarm4.static.flickr.com%2F3539%2F5740322886_ebcef1bbec_m.jpg" type="image/jpeg" rel="preview"/> 
+      <link href="http://images0-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&amp;gadget=a&amp;resize_h=100&amp;url=http%3A%2F%2Ffarm4.static.flickr.com%2F3539%2F5740322886_ebcef1bbec_b.jpg" type="image/jpeg" rel="preview"/> 
+    </buzz:attachment> 
+  </activity:object> 
+  <source> 
+    <activity:service> 
+      <title>Flickr</title> 
+    </activity:service> 
+    <id>tag:google.com,2010:buzz-feed:public:posted:101327999921150687436</id> 
+    <updated>2011-05-20T15:35:30.184Z</updated> 
+    <link href="https://www.googleapis.com/buzz/v1/activities/101327999921150687436/@public?alt=atom" type="application/atom+xml" rel="self"/> 
+    <link href="http://pubsubhubbub.appspot.com/" rel="hub"/> 
+  </source> 
+  <buzz:visibility> 
+    <buzz:aclentry type="group"> 
+      <poco:name>Public</poco:name> 
+    </buzz:aclentry> 
+  </buzz:visibility> 
+  <link buzz:count="0" href="https://www.googleapis.com/buzz/v1/activities/101327999921150687436/@self/B:z12dgfjgkwabv3egs04ch3kqzqnscp2xvhc/@liked?alt=atom" type="application/poco+xml" rel="http://schemas.google.com/buzz/2010#liked"/> 
+</entry> 

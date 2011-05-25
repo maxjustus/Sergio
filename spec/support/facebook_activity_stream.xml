@@ -1,0 +1,43 @@
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/" xmlns:service="http://activitystrea.ms/service-provider" xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:gnip="http://www.gnip.com/schemas/2010"> 
+  <id>100000601711657_225559834120776</id> 
+  <created>2011-05-19T23:13:57+00:00</created> 
+  <published>2011-05-19T23:13:57+00:00</published> 
+  <updated>2011-05-19T23:13:57+00:00</updated> 
+  <title>Shane Smith posted a bookmark to Facebook</title> 
+  <category term="BookmarkPosted" label="Bookmark Posted"/> 
+  <link rel="alternate" type="html" href="http://www.facebook.com/profile.php?id=100000601711657&amp;v=wall&amp;story_fbid=225559834120776"/> 
+  <generator uri="http://www.facebook.com/apps/application.php?id=2344061033">Events</generator> 
+  <source> 
+    <link rel="self" type="application/json" href="https://graph.facebook.com/search?q=party&amp;type=post&amp;limit=75&amp;access_token=&amp;since=Thu+May+19+19%3A13%3A32+-0400+2011"/> 
+    <title>Facebook - Keyword - Search - party</title> 
+    <updated>2011-05-19T23-14-05Z</updated> 
+    <gnip:rule xmlns:gnip="http://www.gnip.com/schemas/2010">party</gnip:rule> 
+  </source> 
+  <service:provider> 
+    <name>Facebook</name> 
+    <uri>www.facebook.com</uri> 
+    <icon/> 
+  </service:provider> 
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb> 
+  <activity:object> 
+    <activity:object-type>http://activitystrea.ms/schema/1.0/bookmark</activity:object-type> 
+    <id>100000601711657_225559834120776</id> 
+    <title>GRADUATION PARTY!!!</title> 
+    <content>Come to my Graduation Party on June 18th!!!</content> 
+    <link rel="alternate" type="html" href="http://www.facebook.com/profile.php?id=100000601711657&amp;v=wall&amp;story_fbid=225559834120776"/> 
+    <link rel="related" href="http://www.facebook.com/event.php?eid=184487541600108"/> 
+    <link rel="preview" href="http://profile.ak.fbcdn.net/hprofile-ak-snc4/187804_184487541600108_5482560_s.jpg"/> 
+  </activity:object> 
+  <author> 
+    <name>Shane Smith</name> 
+    <uri>http://www.facebook.com/profile.php?id=100000601711657</uri> 
+  </author> 
+  <activity:actor> 
+    <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type> 
+    <link rel="alternate" type="html" length="0" href="http://www.facebook.com/profile.php?id=100000601711657"/> 
+  </activity:actor> 
+  <gnip:matching_rules> 
+    <gnip:matching_rule rel="source">party</gnip:matching_rule> 
+    <gnip:matching_rule rel="source">neat</gnip:matching_rule> 
+  </gnip:matching_rules> 
+</entry>

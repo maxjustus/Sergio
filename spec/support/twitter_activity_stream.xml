@@ -1,0 +1,52 @@
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:gnip="http://www.gnip.com/schemas/2010">
+  <id>tag:search.twitter.com,2005:71230904948883456</id>
+  <published>2011-05-19T15:09:05+00:00</published>
+  <updated>2011-05-19T15:09:05+00:00</updated>
+  <summary type="html">@mrpotatochipman cool ;)</summary>
+  <link rel="alternate" type="text/html" href="http://twitter.com/_P3PP_CE/statuses/71230904948883456"/>
+  <source>
+    <link rel="self" type="application/json" href="http://stream.twitter.com/1/statuses/filter.json"/>
+    <title>Twitter - Stream - Track</title>
+    <updated>2011-05-19T15:09:08Z</updated>
+  </source>
+  <service:provider xmlns:service="http://activitystrea.ms/service-provider">
+    <name>Twitter</name>
+    <uri>http://www.twitter.com/</uri>
+    <icon/>
+  </service:provider>
+  <title>P3PP posted a note on Twitter</title>
+  <category term="StatusPosted" label="Status Posted"/>
+  <category term="NotePosted" label="Note Posted"/>
+  <activity:verb xmlns:activity="http://activitystrea.ms/spec/1.0/">http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <activity:object xmlns:activity="http://activitystrea.ms/spec/1.0/">
+    <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+    <id>object:search.twitter.com,2005:71230904948883456</id>
+    <content type="html">@mrpotatochipman cool ;)</content>
+    <link rel="alternate" type="text/html" href="http://twitter.com/_P3PP_CE/statuses/71230904948883456"/>
+    <thr:in-reply-to xmlns:thr="http://purl.org/syndication/thread/1.0" type="text/html" href="http://twitter.com/mrpotatochipman/statuses/71229949155086336"/>
+  </activity:object>
+  <author>
+    <name>P3PP</name>
+    <uri>http://www.twitter.com/_P3PP_CE</uri>
+  </author>
+  <activity:author xmlns:activity="http://activitystrea.ms/spec/1.0/">
+    <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
+    <gnip:friends xmlns:gnip="http://www.gnip.com/schemas/2010" followersCount="911" followingCount="839"/>
+    <link rel="alternate" type="text/html" length="0" href="http://www.twitter.com/_P3PP_CE"/>
+    <link rel="avatar" href="http://a0.twimg.com/profile_images/1352659419/l_15_normal.jpg"/>
+    <id>http://www.twitter.com/_P3PP_CE</id>
+  </activity:author>
+  <activity:actor xmlns:activity="http://activitystrea.ms/spec/1.0/">
+    <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
+    <gnip:friends xmlns:gnip="http://www.gnip.com/schemas/2010" followersCount="911" followingCount="839"/>
+    <gnip:stats xmlns:gnip="http://www.gnip.com/schemas/2010" activityCount="22964" upstreamId="id:twitter.com:125163780"/>
+    <link rel="alternate" type="text/html" length="0" href="http://www.twitter.com/_P3PP_CE"/>
+    <link rel="avatar" href="http://a0.twimg.com/profile_images/1352659419/l_15_normal.jpg"/>
+    <id>http://www.twitter.com/_P3PP_CE</id>
+    <os:location xmlns:os="http://ns.opensocial.org/2008/opensocial">Back N Da LAND,Oh10</os:location>
+    <os:aboutMe xmlns:os="http://ns.opensocial.org/2008/opensocial">Jus A Laid Back Type Of Chick, Who Aint On No B.S  Mad Cool. #TeamGemini, #RMF, #BBN, #TFB, #TeamDroid #TeamSingle Reppn Im Owt ;) </os:aboutMe>
+  </activity:actor>
+  <gnip:matching_rules>
+    <gnip:matching_rule rel="inferred" tag="NEAT">cool</gnip:matching_rule>
+  </gnip:matching_rules>
+</entry>
