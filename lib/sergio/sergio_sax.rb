@@ -9,7 +9,13 @@ class SergioSax < Nokogiri::XML::SAX::Document
   def start_element(name, attrs = [])
     @stack << [name, attrs]
     if current_configs = @object.class.sergio_config.get_element_configs(@stack.clone)
-      current_configs.each {|c| @parent_callbacks << lambda { @object.sergio_parsed_document.set_element(c.new_path, {}, c.options) } if c.aggregate_element}
+      current_configs.each do |c|
+        if c.aggregate_element
+          @parent_callbacks << lambda do
+            @object.sergio_parsed_document.set_element(c.new_path, {}, c.options)
+          end
+        end
+      end
     end
   end
 
