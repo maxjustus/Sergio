@@ -1,5 +1,5 @@
 <a href='http://www.youtube.com/watch?v=GaoLU6zKaws'><img src="http://i.imgur.com/HThQt.jpg" alt="" title="Hosted by imgur.com" /></a>
-## Sergio is a SAX parser with a handy dsl for transforming xml into hashes
+### Sergio is a SAX parser with a handy dsl for transforming xml into hashes
 
 ##Usage
     require 'sergio'
