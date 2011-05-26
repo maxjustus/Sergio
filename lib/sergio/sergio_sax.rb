@@ -8,7 +8,7 @@ class SergioSax < Nokogiri::XML::SAX::Document
 
   def start_element(name, attrs = [])
     @stack << [name, attrs]
-    if current_configs = @object.class.sergio_config.get_element_configs(@stack.clone)
+    if current_configs = @object.class.sergio_config.get_element_configs(@stack)
       current_configs.each do |c|
         if c.aggregate_element
           @parent_callbacks << lambda do
@@ -29,7 +29,7 @@ class SergioSax < Nokogiri::XML::SAX::Document
   end
   
   def end_element(name)
-    current_configs = @object.class.sergio_config.get_element_configs(@stack.clone)
+    current_configs = @object.class.sergio_config.get_element_configs(@stack)
     name, attrs = @stack.pop
     if current_configs
       current_configs.each do |c|
