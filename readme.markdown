@@ -27,7 +27,7 @@
         #You can pass arbitrary nestings to match against and merge to
         element ['some', 'nesting'], ['some', 'other', 'nesting']
 
-        #Duplicate elements in the same scope are automatically made into an array,
+        #Duplicate elements in the same scope are automatically made into an array:
         element 'some', 'thing'
         #parses
         #<body><some>hey</some><some>hi</some></body>
