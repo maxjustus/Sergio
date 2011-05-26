@@ -2,10 +2,15 @@ class SergioSax < Nokogiri::XML::SAX::Document
   def initialize(object)
     @stack = []
     @object = object
+    @current_configs = []
+    @parent_callbacks = []
   end
 
   def start_element(name, attrs = [])
     @stack << [name, attrs]
+    if current_configs = @object.class.sergio_config.get_element_configs(@stack.clone)
+      current_configs.each {|c| @parent_callbacks << lambda { @object.sergio_parsed_document.set_element(c.new_path, {}, c.options) } if c.aggregate_element}
+    end
   end
 
   def characters(string)
@@ -18,28 +23,36 @@ class SergioSax < Nokogiri::XML::SAX::Document
   end
   
   def end_element(name)
-    e_context = @stack.clone
+    current_configs = @object.class.sergio_config.get_element_configs(@stack.clone)
     name, attrs = @stack.pop
-    if sergio_elements = @object.class.sergio_config.get_element_configs(e_context)
-      sergio_elements.each do |sergio_element|
-        attr = sergio_element.options[:attribute]
+    if current_configs
+      current_configs.each do |c|
+        attr = c.options[:attribute]
         val = attrs.assoc(attr)
-        if val
-          val = val[1]
-          hash_path = sergio_element.new_path
-          callback = sergio_element.callback
+        callback = c.callback
 
+        if val && !c.aggregate_element
+          val = val[1]
           r = if callback.arity == 1
             callback.call(val)
           elsif callback.arity == 2
             h = Hash[*attrs.flatten]
             h.delete('@text')
-            callback.call(val, Hash[*attrs.flatten])
+            callback.call(val, h)
           end
 
-          @object.sergio_parsed_document.set_element(hash_path, r, sergio_element.options)
+          #only builds parent elements if at least one of their child elements has a match
+          @parent_callbacks.each do |c|
+            c.call
+          end
+          @parent_callbacks = []
+
+          #build an array of hashes if return value from callback is a hash
+          @object.sergio_parsed_document.set_element(c.new_path, {}, c.options) if r.is_a?(Hash)
+          @object.sergio_parsed_document.set_element(c.new_path, r, c.options)
         end
       end
     end
+    @parent_callbacks = []
   end
 end

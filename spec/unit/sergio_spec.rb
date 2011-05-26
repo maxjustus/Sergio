@@ -15,27 +15,65 @@ describe Sergio do
     it 'parses duplicate elements into an array' do
       s = new_sergio do
         element 'parent' do
-          element 'id'
+          element 'post', 'posts' do
+            element 'id', :as_array => true
+          end
         end
       end
 
-      @xml = "<parent><id>1</id><id>2</id></parent>"
+      @xml = "<parent><post><id>1</id><id>2</id></post><post><id>3</id></post><post></post></parent>"
       @hash = s.new.parse(@xml)
-      @hash['parent']['id'].should == ['1', '2']
+      @hash['parent']['posts'][0]['id'].should == ['1', '2']
+      @hash['parent']['posts'][1]['id'].should == ['3']
+    end
+
+    it 'ignores empty adjacent elements' do
+      s = new_sergio do
+        element 'a' do
+          element 'b' do
+            element 'f'
+          end
+          element 'c', 'b' do
+            element 'e'
+          end
+        end
+      end
+      @xml = '<a>
+        <b></b>
+        <b><f>a</f></b>
+        <b>he</b>
+        <c>a</c>
+        <c>
+          <e>e</e>
+        </c>
+        </a>'
+      h = s.new.parse(@xml)
+      h.should == {'a' => {'b' => [{'f' => 'a'}, {'e' => 'e'}]}}
     end
 
     it 'parses duplicate elements whose callbacks return a hash into an array' do
       s = new_sergio do
         element 'parent' do
-          element 'id' do |v|
-            {'v' => v}
+          element 'p' do
+            element 'id', do |v, attributes|
+              {'v' => v}
+            end
           end
         end
       end
 
-      @xml = "<parent><id>1</id><id>2</id></parent>"
+      @xml = "<parent>
+        <p>
+          <id cool='neat'>1</id>
+          <id>2</id>
+        </p>
+        <p>
+          <id>5</id>
+        </p>
+        </parent>"
       @hash = s.new.parse(@xml)
-      @hash['parent']['id'].should == [{'v' => '1',}, {'v' => '2'}]
+      @hash['parent']['p'][0]['id'].should == [{'v' => '1'}, {'v' => '2'}]
+      @hash['parent']['p'][1]['id'].should == {'v' => '5'}
     end
 
     it 'parses a nested element' do
@@ -105,7 +143,7 @@ describe Sergio do
 
       @xml = "<parent><id>1</id><id>2</id></parent>"
       @hash = s.new.parse(@xml)
-      @hash['post'].should == {'di' => ['1', '2']}
+      @hash['post'].keys.should == ['di']
     end
 
     it 'matches against attributes using :having argument' do
@@ -243,6 +281,14 @@ describe Sergio do
     it 'sets the element at the appropriate point in the hierarchy' do
       v = @s.new.sergio_parsed_document.set_element(['thing', 'stuff'], '1')
       v.should == {'thing' => {'stuff' => '1'}}
+    end
+
+    it 'aggregates adjacent parents into arrays' do
+      s = @s.new
+      s.sergio_parsed_document.set_element(['thing', 'stuff'], '1')
+      s.sergio_parsed_document.set_element(['thing'], {})
+      v = s.sergio_parsed_document.set_element(['thing', 'stuff'], '2')
+      v.should == {'thing' => [{'stuff' => '1'}, {'stuff' => '2'}]}
     end
   end
 end

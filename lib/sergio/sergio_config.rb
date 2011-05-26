@@ -23,6 +23,7 @@ module Sergio
       newname = name unless newname
       name = [name] unless name.is_a?(Array)
       newname = [newname] unless newname.is_a?(Array)
+      aggregate_element = false
 
       name.each do |n|
         @current_path << n
@@ -42,11 +43,12 @@ module Sergio
       if blk.arity < 1
         blk.call
         callback = lambda {|v|{}}
+        aggregate_element = true
       else
         callback = blk
       end
 
-      elem = Sergio::Element.new(new_path, args, callback)
+      elem = Sergio::Element.new(new_path, args, callback, aggregate_element)
 
       @parsing_elements = hash_recursive_merge_to_arrays(@parsing_elements, hash_from_path(current_path, {:sergio_elem => elem}))
       current_path.pop(name.length)

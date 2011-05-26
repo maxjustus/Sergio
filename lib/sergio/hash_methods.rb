@@ -17,8 +17,12 @@ module Sergio
       k = k.is_a?(Array) ? k[0] : k
       v = hash[k]
       if v
-        if v.is_a?(Hash) && path.length > 0
-          value_at_path(path, v)
+        if path.length > 0
+          if v.is_a?(Hash)
+            value_at_path(path, v)
+          elsif v.last.is_a?(Hash)
+            value_at_path(path, v.last)
+          end
         else
           v
         end
@@ -53,6 +57,38 @@ module Sergio
         r[key] = oldval.class == Hash && newval.class == Hash ? hash_recursive_merge(oldval, newval) : newval
       end
       v
+    end
+
+    def hash_recursive_append(lval, rval)
+      r = {}
+      v = lval.merge(rval) do |key, oldval, newval|
+        r[key] = if oldval.is_a?(Hash) && newval.is_a?(Hash)
+          if newval.size == 0
+            [oldval, newval]
+          else
+            hash_recursive_append(oldval, newval)
+          end
+        else
+          if oldval.is_a?(Array)
+            if oldval.last.is_a?(Hash) && newval.is_a?(Hash) && newval.size > 0
+              oldval << hash_recursive_append(oldval.pop, newval)
+            else
+              oldval << newval
+            end
+          elsif newval.is_a?(Array)
+            newval << oldval
+          else
+            [oldval] << newval
+          end
+        end
+      end
+      v
+    end
+  end
+
+  def remove_empty_hashes(hash)
+    hash.delete_if do |k,v|
+      true
     end
   end
 end

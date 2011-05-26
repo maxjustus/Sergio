@@ -4,7 +4,6 @@ GEM
     diff-lcs (1.1.2)
     nokogiri (1.4.4)
     rake (0.9.0)
-    rcov (0.9.9)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -20,5 +19,4 @@ PLATFORMS
 DEPENDENCIES
   nokogiri
   rake
-  rcov
   rspec
