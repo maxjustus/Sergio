@@ -5,8 +5,9 @@
     class MyXmlMunger
       include Sergio
 
-      #the element will be renamed to the second argument in the hash if one is provided
+      #the hash key will be renamed to the second argument passed to element if one is provided
       element 'body', 'bro' do
+        #if a second argument isn't provided it will just use the original name of the element
         element 'id'
         #the :attribute option specifies what attribute to draw the value from for the resulting hash
         element 'a', 'link', :attribute => 'href'
