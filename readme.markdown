@@ -1,8 +1,7 @@
 <a href='http://www.youtube.com/watch?v=GaoLU6zKaws'><img src="http://i.imgur.com/HThQt.jpg" alt="" title="Hosted by imgur.com" /></a>
 ### Sergio is a SAX parser with a handy dsl for transforming xml into hashes
-It provides a single class method 'element' for declaring how you want to transform your xml into a hash
 
-###Here's an extended example
+#Usage
     require 'sergio'
 
     class MyXmlMunger
@@ -57,3 +56,30 @@ It provides a single class method 'element' for declaring how you want to transf
 ###To parse a document into a hash, call parse on an instance of your parsing class with a document string as an argument
     MyXmlMunger.new.parse("<body><id>1</id><a href='dude'>something</a></body>")
     #returns {'bro' => {'id' => '1', 'link' => 'dude'}}
+
+LICENSE
+
+(The MIT License)
+
+Copyright © 2011:
+
+Max Justus Spransy
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+‘Software’), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
