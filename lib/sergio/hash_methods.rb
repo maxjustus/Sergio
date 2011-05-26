@@ -50,15 +50,6 @@ module Sergio
       v
     end
 
-    #FROM https://gist.github.com/6391/62b6aae9206abe7b3fea6d4659e4c246f8cf7632
-    def hash_recursive_merge(lval, rval)
-      r = {}
-      v = lval.merge(rval) do |key, oldval, newval| 
-        r[key] = oldval.class == Hash && newval.class == Hash ? hash_recursive_merge(oldval, newval) : newval
-      end
-      v
-    end
-
     def hash_recursive_append(lval, rval)
       r = {}
       v = lval.merge(rval) do |key, oldval, newval|
@@ -83,12 +74,6 @@ module Sergio
         end
       end
       v
-    end
-  end
-
-  def remove_empty_hashes(hash)
-    hash.delete_if do |k,v|
-      true
     end
   end
 end

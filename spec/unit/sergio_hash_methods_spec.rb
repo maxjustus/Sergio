@@ -62,32 +62,6 @@ describe Sergio::HashMethods do
     end
   end
 
-  context 'hash_recursive_merge' do
-    before do
-      @s = Class.new do
-        include Sergio::HashMethods
-      end.new
-    end
-
-    it 'merges subhashes together' do
-      h1 = {:thing => {'guy' => 'cool'}}
-      h2 = {:thing => {'guys' => 'cool'}}
-      @s.hash_recursive_merge(h1, h2).should == {:thing => {'guy' => 'cool', 'guys' => 'cool'}}
-    end
-
-    it 'replaces intersecting key values with rightmost hash argument value' do
-      h1 = {:thing => {'guy' => 'cool'}}
-      h2 = {:thing => {'guy' => 'cools'}}
-      @s.hash_recursive_merge(h1, h2).should == {:thing => {'guy' => 'cools'}}
-    end
-
-    it 'merges new key values into existing hash if one is present' do
-      h1 = {:thing => {'guy' => 'cool'}}
-      h2 = {:thing => {'neat' => 'cools'}}
-      @s.hash_recursive_merge(h1, h2).should == {:thing => {'guy' => 'cool', 'neat' => 'cools'}}
-    end
-  end
-
   context 'hash_recursive_append' do
     before do
       @s = Class.new do

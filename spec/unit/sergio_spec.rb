@@ -38,14 +38,15 @@ describe Sergio do
           end
         end
       end
-      @xml = '<a>
-        <b></b>
-        <b><f>a</f></b>
-        <b>he</b>
-        <c>a</c>
-        <c>
-          <e>e</e>
-        </c>
+      @xml = '
+        <a>
+          <b></b>
+          <b><f>a</f></b>
+          <b>he</b>
+          <c>a</c>
+          <c>
+            <e>e</e>
+          </c>
         </a>'
       h = s.new.parse(@xml)
       h.should == {'a' => {'b' => [{'f' => 'a'}, {'e' => 'e'}]}}
