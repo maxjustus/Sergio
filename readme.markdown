@@ -9,10 +9,13 @@
 
       #the hash key will be renamed to the second argument passed to element if one is provided
       element 'body', 'bro' do
+
         #if a second argument isn't provided it will just use the original name of the element
         element 'id'
+
         #the :attribute option specifies what attribute to draw the value from for the resulting hash
         element 'a', 'link', :attribute => 'href'
+
         #You can pass a block to #element with a value argument and the hash value will be set to the result of the block
         element 'p', 'content' do |v|
           v.reverse
@@ -31,6 +34,7 @@
 
         #Duplicate elements in the same scope are automatically made into an array:
         element 'some', 'thing'
+
         #parses
         #<body><some>hey</some><some>hi</some></body>
         #as
@@ -42,6 +46,7 @@
 
         #You can force arrays for even a single matching element within a given scope using the :as_array option
         element 'some', 'thing', :as_array => true
+
         #parses
         #<body><some>hi</some></body>
         #as
