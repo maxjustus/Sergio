@@ -46,7 +46,7 @@ module Sergio
         callback = blk
       end
 
-      elem = SergioElement.new(new_path, args, callback)
+      elem = Sergio::Element.new(new_path, args, callback)
 
       @parsing_elements = hash_recursive_merge_to_arrays(@parsing_elements, hash_from_path(current_path, {:sergio_elem => elem}))
       current_path.pop(name.length)
@@ -60,7 +60,7 @@ module Sergio
       if v
         v = v[:sergio_elem]
         if v
-          v = [v] if v.is_a?(SergioElement)
+          v = [v] if v.is_a?(Sergio::Element)
           vs = v.select do |v|
             if v.options[:having]
               match = v.options[:having].any? do |attr,value|
