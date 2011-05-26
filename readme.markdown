@@ -23,6 +23,7 @@
 
         #You can pass :having to #element to specify attributes required to match against
         element 'div', 'cars', :having => {'class' => 'car'} do
+
           #You can pass value and attributes arguments into the block you pass to element
           element 'p', 'description' do |value, attributes|
             "#{value} #{attributes['attribute']}"
