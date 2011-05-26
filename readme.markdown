@@ -1,5 +1,8 @@
 <a href='http://www.youtube.com/watch?v=GaoLU6zKaws'><img src="http://i.imgur.com/HThQt.jpg" alt="" title="Hosted by imgur.com" /></a>
 ### Sergio is a SAX parser with a handy dsl for transforming xml into hashes
+It provides a single class method 'element' for declaring how you want to transform your xml into a hash
+
+###Here's an extended example
     require 'sergio'
 
     class MyXmlMunger
