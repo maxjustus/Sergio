@@ -1,4 +1,4 @@
-[![](http://imgur.com/HThQt.jpg)](http://www.youtube.com/watch?v=GaoLU6zKaws)
+<a href='http://www.youtube.com/watch?v=GaoLU6zKaws'><img src="http://i.imgur.com/HThQt.jpg" alt="" title="Hosted by imgur.com" /></a>
 ### Sergio is a SAX parser with a handy dsl for transforming xml into hashes
     require 'sergio'
 
@@ -50,6 +50,6 @@
       end
     end
 
-##To parse a document into a hash, call parse on an instance of your parsing class with a document string as an argument
+###To parse a document into a hash, call parse on an instance of your parsing class with a document string as an argument
     MyXmlMunger.new.parse("<body><id>1</id><a href='dude'>something</a></body>")
     #returns {'bro' => {'id' => '1', 'link' => 'dude'}}
