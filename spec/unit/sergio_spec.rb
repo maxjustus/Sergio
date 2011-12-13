@@ -270,7 +270,7 @@ describe Sergio do
 
       @xml = '<a y="what"><b>hi</b></a>'
       @hash = s.new.parse(@xml)
-      @hash['a']['b'].should == {'c' => 'what'}
+      @hash['a']['b'].should == 'hi'
     end
   end
 
