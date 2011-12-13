@@ -297,9 +297,7 @@ describe Sergio do
     s = new_sergio do
       element 'entry' do
         element 'activity:object', 'object' do
-          element 'subtitle' do |v, attributes|
-            v
-          end
+          element 'subtitle'
         end
       end
     end
