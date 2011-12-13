@@ -1,0 +1,42 @@
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:activity="http://activitystrea.ms/spec/1.0/" xmlns:service="http://activitystrea.ms/service-provider" xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:media="http://purl.org/syndication/atommedia" xmlns:geo="http://www.georss.org/georss" xmlns:poco="http://portablecontacts.net/spec/1.0" xmlns:gnip="http://www.gnip.com/schemas/2010">
+  <id>z13ocjxg0rnfj1kgh04cejqrswjgx1fopzs0k</id>
+  <published>2011-12-13T16:38:37+00:00</published>
+  <updated>2011-12-13T16:38:38+00:00</updated>
+  <title type="text/plain">Jay M posted a bookmark on Google+</title>
+  <category term="BookmarkPosted" label="Bookmark Posted"/>
+  <link rel="alternate" type="text/html" href="https://plus.google.com/115224273541109110117/posts/QfsSsHEmF27"/>
+  <source>
+    <link rel="self" type="application/json" href="https://www.googleapis.com/plus/v1/activities?query=Christmas&amp;orderBy=recent&amp;maxResults=20&amp;key=AIzaSyCl4y-dm-Nzf8zPdBYjQUSN0xbxE7JLCRI"/>
+    <title>Google - Plus - Keyword Search - Christmas</title>
+    <updated>2011-12-13T19-03-49Z</updated>
+    <gnip:rule>Christmas</gnip:rule>
+  </source>
+  <service:provider>
+    <name>Google</name>
+    <uri>plus.google.com</uri>
+  </service:provider>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <activity:object>
+    <activity:object-type>http://activitystrea.ms/schema/1.0/bookmark</activity:object-type>
+    <id>object:z13ocjxg0rnfj1kgh04cejqrswjgx1fopzs0k</id>
+    <title type="text/html">www.militaryweddingdiscounts.com  &#xBB; Blog Archive   &#xBB; Second Day of Christmas &#x2013; Jay Mountford Photography</title>
+    <content type="text/html">Second Day of Christmas &#x2013; Jay Mountford Photography. Posted by Emma &#x2665; - December 13th, 2011. Name: Jay Mountford. Company name: Jay Mountford Photography. &#x2665; Favourite Christmas Song: That&amp;#39;s a toug...</content>
+    <subtitle type="text/html">Oooo looky looky - I&amp;#39;m talking about some amusing Christmas wishes over on Military Wedding today!&lt;br /&gt;&lt;br /&gt;#Christmas #Wedding #Military #Photography</subtitle>
+    <link rel="alternate" type="text/html" href="https://plus.google.com/115224273541109110117/posts/QfsSsHEmF27"/>
+    <link rel="enclosure" type="text/html" href="http://militaryweddingdiscounts.com/second-day-of-christmas-jay-mountford-photography/" title="www.militaryweddingdiscounts.com  &#xBB; Blog Archive   &#xBB; Second Day of Christmas &#x2013; Jay Mountford Photography"/>
+    <link rel="enclosure" type="image/jpeg" href="http://militaryweddingdiscounts.com/wp-content/uploads/2011/12/JayMountford12doc-1024x819.png" media:width="1024" media:height="819"/>
+    <gnip:statistics favoriteCount="0"/>
+  </activity:object>
+  <author>
+    <name>Jay M</name>
+    <uri>https://plus.google.com/115224273541109110117</uri>
+  </author>
+  <activity:actor>
+    <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
+    <link rel="alternate" type="html" length="0" href="https://plus.google.com/115224273541109110117"/>
+    <id>115224273541109110117</id>
+  </activity:actor>
+  <gnip:matching_rules>
+    <gnip:matching_rule rel="source">Christmas</gnip:matching_rule>
+  </gnip:matching_rules>
+</entry>

@@ -7,6 +7,7 @@ class SergioSax < Nokogiri::XML::SAX::Document
   end
 
   def start_element(name, attrs = [])
+    attrs = Hash[*attrs.flatten]
     @stack << [name, attrs]
     if current_configs = @object.class.sergio_config.get_element_configs(@stack)
       current_configs.each do |c|
@@ -21,7 +22,7 @@ class SergioSax < Nokogiri::XML::SAX::Document
 
   def characters(string)
     name, attrs = @stack.last
-    attrs << ['@text', string]
+    attrs['@text'] = attrs.fetch('@text', '') + string
   end
 
   def cdata_block(string)
@@ -34,17 +35,15 @@ class SergioSax < Nokogiri::XML::SAX::Document
     if current_configs
       current_configs.each do |c|
         attr = c.options[:attribute]
-        val = attrs.assoc(attr)
+        val = attrs[attr]
         callback = c.callback
 
         if val && !c.aggregate_element
-          val = val[1]
           r = if callback.arity == 1
             callback.call(val)
           elsif callback.arity == 2
-            h = Hash[*attrs.flatten]
-            h.delete('@text')
-            callback.call(val, h)
+            attrs.delete('@text')
+            callback.call(val, attrs)
           end
 
           #only builds parent elements if at least one of their child elements has a match

@@ -292,4 +292,20 @@ describe Sergio do
       v.should == {'thing' => [{'stuff' => '1'}, {'stuff' => '2'}]}
     end
   end
+
+  it 'properly parses elements which make multiple calls to SergioSax#characters' do
+    s = new_sergio do
+      element 'entry' do
+        element 'activity:object', 'object' do
+          element 'subtitle' do |v, attributes|
+            v
+          end
+        end
+      end
+    end
+
+    parsed_d = s.new.parse(File.read(File.dirname(__FILE__) + '/../support/weird_unicode.xml'))
+    expected = "Oooo looky looky - I&#39;m talking about some amusing Christmas wishes over on Military Wedding today!<br /><br />#Christmas #Wedding #Military #Photography"
+    parsed_d['entry']['object']['subtitle'].should == expected
+  end
 end
